@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Full Circle Prayer Setup</title>
+<meta name="description" content="Fill in your church's details, preview Full Circle Prayer, and copy the code for your website.">
+<style>
+:root {
+	--bg: #f6f3ee; --card: #fffdf9; --ink: #1f2a30; --muted: #5d6a70; --line: #e2dbcf;
+	--accent: #2f4858; --accent-ink: #fff; --focus: #c9822b;
+}
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme="light"]) { --bg: #14191c; --card: #1c2327; --ink: #ecf0f1; --muted: #a3b0b5; --line: #2f3a40; --accent: #8fb3c7; --accent-ink: #10181c; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+header.top { padding: 28px 16px 8px; max-width: 1280px; margin: 0 auto; }
+header.top h1 { margin: 0 0 4px; font-size: 1.7rem; }
+header.top p { margin: 0; color: var(--muted); max-width: 70ch; }
+.wrap { display: grid; gap: 24px; max-width: 1280px; margin: 0 auto; padding: 16px; }
+@media (min-width: 980px) { .wrap { grid-template-columns: minmax(380px, 460px) 1fr; align-items: start; } .preview { position: sticky; top: 16px; } }
+form { display: grid; gap: 16px; }
+fieldset { margin: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--card); padding: 16px; display: grid; gap: 12px; min-width: 0; }
+legend { font-weight: 700; padding: 0 6px; }
+label { display: grid; gap: 4px; font-size: .92rem; font-weight: 600; }
+label small, .note { font-weight: 400; color: var(--muted); font-size: .85rem; }
+input[type=text], input[type=email], input[type=url], input[type=number], select, textarea {
+	font: inherit; font-weight: 400; color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; width: 100%;
+}
+textarea { min-height: 84px; resize: vertical; }
+input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-visible { outline: 3px solid var(--focus); outline-offset: 1px; }
+.row { display: grid; gap: 12px; grid-template-columns: 1fr 1fr; }
+.colors { display: grid; gap: 10px; grid-template-columns: repeat(4, 1fr); }
+.colors label { justify-items: start; }
+input[type=color] { width: 100%; height: 38px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); padding: 2px; }
+.check { display: flex; gap: 8px; align-items: flex-start; font-weight: 400; }
+.check input { margin-top: 4px; }
+.people { display: grid; gap: 10px; }
+.person { border: 1px dashed var(--line); border-radius: 10px; padding: 10px; display: grid; gap: 8px; }
+.person .row { grid-template-columns: 1fr 1fr; }
+button { font: inherit; cursor: pointer; border-radius: 999px; padding: 8px 16px; border: 1px solid var(--line); background: var(--card); color: var(--ink); }
+button.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 600; }
+button.link { border: 0; background: none; padding: 0; color: var(--muted); text-decoration: underline; justify-self: start; }
+.out { display: grid; gap: 10px; }
+.out pre { margin: 0; max-height: 320px; overflow: auto; background: #10181c; color: #e6edf0; border-radius: 10px; padding: 12px; font-size: .8rem; white-space: pre-wrap; word-break: break-word; }
+.actions { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.status { color: var(--muted); font-size: .9rem; }
+.preview { min-width: 0; }
+.preview-label { font-size: 1rem; margin: 0 0 8px; color: var(--muted); font-weight: 600; }
+.stage { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px; }
+footer.bottom { max-width: 1280px; margin: 0 auto; padding: 8px 16px 40px; color: var(--muted); font-size: .9rem; }
+footer.bottom a { color: inherit; }
+@media (max-width: 520px) { .row, .person .row { grid-template-columns: 1fr; } .colors { grid-template-columns: 1fr 1fr; } }
+</style>
+</head>
+<body>
+<header class="top">
+	<h1>Full Circle Prayer setup</h1>
+	<p>Fill in your church’s details and watch the preview change. When it looks right, copy the code and paste it into any page on your website. Full Circle Prayer updates itself; your settings stay in your page.</p>
+</header>
+
+<div class="wrap">
+	<form id="f" autocomplete="off">
+		<fieldset>
+			<legend>Your church</legend>
+			<label>Church name <input type="text" name="church" placeholder="Hillside Community Church"></label>
+			<div class="row">
+				<label>Tagline <input type="text" name="tagline" placeholder="Full Circle Prayer"></label>
+				<label>City <small>Used in “Pray for {city}”</small><input type="text" name="city" placeholder="Springfield"></label>
+			</div>
+			<label>Address or location line <input type="text" name="location" placeholder="120 Elm Street · Springfield"></label>
+			<label>Logo address <small>A link to your logo image (https://…). Optional.</small><input type="url" name="logo" placeholder="https://example.org/logo.png"></label>
+		</fieldset>
+
+		<fieldset>
+			<legend>Look and defaults</legend>
+			<div class="colors">
+				<label>Up <input type="color" name="color_up" value="#c48a1c"></label>
+				<label>In <input type="color" name="color_in" value="#2c7a7f"></label>
+				<label>Out <input type="color" name="color_out" value="#b24a33"></label>
+				<label>Buttons <input type="color" name="color_button" value="#1f3a5f"></label>
+			</div>
+			<button type="button" class="link" id="reset-colors">Use the standard colors</button>
+			<div class="row">
+				<label>Bible
+					<select name="bible"><option value="WEB">World English Bible (WEB)</option><option value="KJV">King James Version (KJV)</option></select>
+				</label>
+				<label>Starting prayer time
+					<select name="duration"><option value="15" selected>15 minutes</option><option value="30">30 minutes</option><option value="60">60 minutes</option><option value="pace">Open, no timer</option></select>
+				</label>
+			</div>
+			<label>Starting experience
+				<select name="mode"><option value="simple">Simple Prayer</option><option value="full">Full Prayer</option></select>
+			</label>
+			<label class="check"><input type="checkbox" name="keepNotes" checked> <span>Keep notes in the person’s browser for the day</span></label>
+			<label class="check"><input type="checkbox" name="phoneTools" checked> <span>Show “Distraction-free prayer” phone tips</span></label>
+			<label class="check"><input type="checkbox" name="homeScreen" checked> <span>Show “Add to Home Screen” tips</span></label>
+			<label class="check"><input type="checkbox" name="attribution" checked> <span>Credit Dick Eastman’s <em>The Hour That Changes the World</em></span></label>
+			<label class="check"><input type="checkbox" name="bottomList"> <span>Show the wheel and movement list again above the footer</span></label>
+		</fieldset>
+
+		<fieldset>
+			<legend>Help and feedback</legend>
+			<div class="row">
+				<label>Email <small>For “Need help?” and feedback</small><input type="email" name="email" placeholder="prayer@example.org"></label>
+				<label>Name to show <input type="text" name="emailName" placeholder="the prayer team"></label>
+			</div>
+			<label>Footer text <input type="text" name="footer"></label>
+		</fieldset>
+
+		<fieldset>
+			<legend>Missionaries</legend>
+			<p class="note">Shown under Pray for the World, with a photo if you give one.</p>
+			<div class="people" id="people"></div>
+			<button type="button" id="add-person">Add a missionary</button>
+		</fieldset>
+
+		<fieldset>
+			<legend>Local churches</legend>
+			<label>Churches to pray for <small>One per line: Name | street or note | area. A few are shown each day under Pray for your church.</small>
+				<textarea name="churches" rows="5" placeholder="First Baptist Church | Main Street | Downtown"></textarea></label>
+			<label>Churches shown each day <input type="number" name="perDay" min="0" max="20" value="3"></label>
+		</fieldset>
+
+		<fieldset>
+			<legend>Pray for the world</legend>
+			<label>Countries and prayer prompts <small>One per line: Country | prompt</small>
+				<textarea name="countries" placeholder="Peru | for the church in the Andes"></textarea></label>
+			<label>Countries and prayer requests <small>Places where Christians face pressure. One per line: Country | request</small>
+				<textarea name="countryRequests" placeholder="North Korea | for secret believers"></textarea></label>
+		</fieldset>
+
+		<fieldset class="out">
+			<legend>Your code</legend>
+			<p class="note">Paste this into your web page where Full Circle Prayer should appear. On WordPress, Squarespace or Wix, use a Custom HTML or Code block.</p>
+			<pre id="code"></pre>
+			<div class="actions">
+				<button type="button" class="primary" id="copy">Copy code</button>
+				<button type="button" id="download">Download as a page</button>
+				<span class="status" id="status" role="status" aria-live="polite"></span>
+			</div>
+			<details>
+				<summary>Edit code you made before</summary>
+				<p class="note">Paste your earlier code here to load its settings into the form.</p>
+				<textarea id="paste" rows="4"></textarea>
+				<div class="actions"><button type="button" id="load">Load settings</button></div>
+			</details>
+		</fieldset>
+	</form>
+
+	<section class="preview" aria-label="Preview">
+		<p class="preview-label">Preview</p>
+		<div class="stage" id="stage"></div>
+	</section>
+</div>
+
+<footer class="bottom">
+	Full Circle Prayer is free and open source (GPL). <a href="https://github.com/avdude/full-circle-prayer-web">Source on GitHub</a> · <a href="https://fullcircleprayer.com/">fullcircleprayer.com</a>
+</footer>
+
+<script src="../dist/full-circle-prayer.js" data-no-auto></script>
+<script>
+( function () {
+	'use strict';
+	var CDN = 'https://cdn.jsdelivr.net/gh/avdude/full-circle-prayer-web@1/dist/full-circle-prayer.js';
+	var STD = {'up': '#c48a1c', 'in': '#2c7a7f', 'out': '#b24a33', 'button': '#1f3a5f'};
+	var DRAFT = 'prwh_builder_draft';
+	var f = document.getElementById( 'f' );
+	var people = document.getElementById( 'people' );
+
+	function val( n ) {
+		var el = f.elements[ n ];
+		return el ? String( el.value || '' ).trim() : '';
+	}
+	function on( n ) {
+		return !! ( f.elements[ n ] && f.elements[ n ].checked );
+	}
+	function rows( text ) {
+		return text.split( /\r?\n/ ).map( function ( l ) { return l.trim(); } ).filter( Boolean );
+	}
+
+	function addPerson( p ) {
+		p = p || {};
+		var d = document.createElement( 'div' );
+		d.className = 'person';
+		d.innerHTML = '<div class="row"><label>Name <input type="text" data-k="name"></label><label>Where <input type="text" data-k="location"></label></div>' +
+			'<label>How to pray <input type="text" data-k="prayer"></label>' +
+			'<label>Photo address <small>Optional, https://…</small><input type="url" data-k="photo"></label>' +
+			'<button type="button" class="link" data-remove>Remove</button>';
+		[ 'name', 'location', 'prayer', 'photo' ].forEach( function ( k ) {
+			d.querySelector( '[data-k="' + k + '"]' ).value = p[ k ] || '';
+		} );
+		d.querySelector( '[data-remove]' ).addEventListener( 'click', function () {
+			d.remove();
+			changed();
+		} );
+		people.appendChild( d );
+	}
+
+	/** The settings object, leaving out anything still at its default. */
+	function settings() {
+		var c = {};
+		[ 'church', 'tagline', 'location', 'city', 'logo' ].forEach( function ( k ) {
+			if ( val( k ) ) { c[ k ] = val( k ); }
+		} );
+		if ( val( 'bible' ) !== 'WEB' ) { c.bible = val( 'bible' ); }
+		var colors = {};
+		[ 'up', 'in', 'out', 'button' ].forEach( function ( k ) {
+			var v = val( 'color_' + k ).toLowerCase();
+			if ( v && v !== STD[ k ] ) { colors[ k ] = v; }
+		} );
+		if ( Object.keys( colors ).length ) { c.colors = colors; }
+		if ( val( 'duration' ) !== '15' ) { c.duration = /^\d+$/.test( val( 'duration' ) ) ? +val( 'duration' ) : val( 'duration' ); }
+		if ( val( 'mode' ) !== 'simple' ) { c.mode = val( 'mode' ); }
+		if ( ! on( 'keepNotes' ) ) { c.keepNotes = false; }
+		var show = {};
+		if ( ! on( 'phoneTools' ) ) { show.phoneTools = false; }
+		if ( ! on( 'homeScreen' ) ) { show.homeScreen = false; }
+		if ( ! on( 'attribution' ) ) { show.attribution = false; }
+		if ( on( 'bottomList' ) ) { show.bottomList = true; }
+		if ( Object.keys( show ).length ) { c.show = show; }
+		if ( val( 'email' ) ) { c.feedback = { email: val( 'email' ) }; if ( val( 'emailName' ) ) { c.feedback.name = val( 'emailName' ); } }
+		if ( val( 'footer' ) ) { c.footer = val( 'footer' ); }
+		var ms = [];
+		people.querySelectorAll( '.person' ).forEach( function ( d ) {
+			var p = {};
+			[ 'name', 'location', 'prayer', 'photo' ].forEach( function ( k ) {
+				var v = d.querySelector( '[data-k="' + k + '"]' ).value.trim();
+				if ( v ) { p[ k ] = v; }
+			} );
+			if ( p.name ) { ms.push( p ); }
+		} );
+		if ( ms.length ) { c.missionaries = ms; }
+		var list = rows( val( 'churches' ) ).map( function ( l ) {
+			var parts = l.split( '|' ).map( function ( x ) { return x.trim(); } );
+			var o = { name: parts[ 0 ] };
+			if ( parts[ 1 ] ) { o.detail = parts[ 1 ]; }
+			if ( parts[ 2 ] ) { o.area = parts[ 2 ]; }
+			return o;
+		} ).filter( function ( o ) { return o.name; } );
+		if ( list.length ) { c.churches = { perDay: Math.max( 0, parseInt( val( 'perDay' ), 10 ) || 0 ), list: list }; }
+		if ( rows( val( 'countries' ) ).length ) { c.countries = rows( val( 'countries' ) ); }
+		if ( rows( val( 'countryRequests' ) ).length ) { c.countryRequests = rows( val( 'countryRequests' ) ); }
+		return c;
+	}
+
+	function code( c ) {
+		var json = JSON.stringify( c, null, 2 ).replace( /<\//g, '<\\/' );
+		return '<div data-full-circle-prayer></div>\n' +
+			'<script>\nwindow.FullCirclePrayerConfig = ' + json + ';\n<\/script>\n' +
+			'<script src="' + CDN + '" defer><\/script>';
+	}
+
+	function fill( c ) {
+		f.reset();
+		people.textContent = '';
+		[ 'church', 'tagline', 'location', 'city', 'logo', 'footer' ].forEach( function ( k ) {
+			if ( c[ k ] ) { f.elements[ k ].value = c[ k ]; }
+		} );
+		f.elements.bible.value = c.bible === 'KJV' ? 'KJV' : 'WEB';
+		var col = c.colors || {};
+		[ 'up', 'in', 'out', 'button' ].forEach( function ( k ) {
+			f.elements[ 'color_' + k ].value = col[ k ] || STD[ k ];
+		} );
+		f.elements.duration.value = [ '15', '30', '60', 'pace' ].indexOf( String( c.duration ) ) >= 0 ? String( c.duration ) : '15';
+		f.elements.mode.value = c.mode === 'full' ? 'full' : 'simple';
+		var s = c.show || {};
+		f.elements.keepNotes.checked = c.keepNotes !== false;
+		f.elements.phoneTools.checked = s.phoneTools !== false;
+		f.elements.homeScreen.checked = s.homeScreen !== false;
+		f.elements.attribution.checked = s.attribution !== false;
+		f.elements.bottomList.checked = !! s.bottomList;
+		var fb = c.feedback || {};
+		f.elements.email.value = fb.email || '';
+		f.elements.emailName.value = fb.name || '';
+		( c.missionaries || [] ).forEach( addPerson );
+		var ch = c.churches || {};
+		var list = Array.isArray( ch ) ? ch : ( ch.list || [] );
+		f.elements.churches.value = list.map( function ( x ) {
+			x = typeof x === 'string' ? { name: x } : x;
+			return [ x.name, x.detail, x.area ].filter( Boolean ).join( ' | ' );
+		} ).join( '\n' );
+		f.elements.perDay.value = ch.perDay === undefined ? 3 : ch.perDay;
+		f.elements.countries.value = ( c.countries || [] ).join( '\n' );
+		f.elements.countryRequests.value = ( c.countryRequests || [] ).join( '\n' );
+	}
+
+	var timer = null;
+	var last = '';
+	function changed() {
+		var c = settings();
+		document.getElementById( 'code' ).textContent = code( c );
+		try { localStorage.setItem( DRAFT, JSON.stringify( c ) ); } catch ( e ) {}
+		window.clearTimeout( timer );
+		timer = window.setTimeout( function () {
+			var key = JSON.stringify( c );
+			if ( key === last ) { return; }
+			last = key;
+			var stage = document.getElementById( 'stage' );
+			var box = document.createElement( 'div' );
+			stage.textContent = '';
+			stage.appendChild( box );
+			window.FullCirclePrayer.render( box, c );
+		}, 350 );
+	}
+
+	function say( msg ) {
+		var s = document.getElementById( 'status' );
+		s.textContent = msg;
+		window.setTimeout( function () { if ( s.textContent === msg ) { s.textContent = ''; } }, 3500 );
+	}
+
+	f.addEventListener( 'input', changed );
+	f.addEventListener( 'change', changed );
+	f.addEventListener( 'submit', function ( e ) { e.preventDefault(); } );
+	document.getElementById( 'add-person' ).addEventListener( 'click', function () {
+		addPerson();
+		people.lastElementChild.querySelector( 'input' ).focus();
+	} );
+	document.getElementById( 'reset-colors' ).addEventListener( 'click', function () {
+		[ 'up', 'in', 'out', 'button' ].forEach( function ( k ) { f.elements[ 'color_' + k ].value = STD[ k ]; } );
+		changed();
+	} );
+	document.getElementById( 'copy' ).addEventListener( 'click', function () {
+		var text = document.getElementById( 'code' ).textContent;
+		( navigator.clipboard ? navigator.clipboard.writeText( text ) : Promise.reject() ).then( function () {
+			say( 'Copied. Paste it into your page.' );
+		}, function () {
+			var r = document.createRange();
+			r.selectNodeContents( document.getElementById( 'code' ) );
+			var sel = window.getSelection();
+			sel.removeAllRanges();
+			sel.addRange( r );
+			say( 'Selected. Press Ctrl+C (or ⌘C) to copy.' );
+		} );
+	} );
+	document.getElementById( 'download' ).addEventListener( 'click', function () {
+		var c = settings();
+		var title = ( c.church ? c.church + ' · ' : '' ) + 'Full Circle Prayer';
+		var html = '<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n<title>' +
+			title.replace( /&/g, '&amp;' ).replace( /</g, '&lt;' ) + '</title>\n<style>body{margin:0;background:#f6f3ee}main{max-width:760px;margin:0 auto;padding:16px}</style>\n</head>\n<body>\n<main>\n' +
+			code( c ) + '\n</main>\n</body>\n</html>\n';
+		var a = document.createElement( 'a' );
+		a.href = URL.createObjectURL( new Blob( [ html ], { type: 'text/html' } ) );
+		a.download = 'full-circle-prayer.html';
+		document.body.appendChild( a );
+		a.click();
+		a.remove();
+		say( 'Downloaded full-circle-prayer.html.' );
+	} );
+	document.getElementById( 'load' ).addEventListener( 'click', function () {
+		var text = document.getElementById( 'paste' ).value;
+		var m = text.match( /FullCirclePrayerConfig\s*=\s*(\{[\s\S]*\})\s*;?\s*(<\/script>|$)/ );
+		try {
+			fill( JSON.parse( ( m ? m[ 1 ] : text ).replace( /<\\\//g, '</' ) ) );
+			changed();
+			say( 'Settings loaded.' );
+		} catch ( e ) {
+			say( 'That code could not be read. Paste the whole code this page gave you.' );
+		}
+	} );
+
+	var draft = null;
+	try { draft = JSON.parse( localStorage.getItem( DRAFT ) || 'null' ); } catch ( e ) {}
+	if ( draft ) { fill( draft ); }
+	changed();
+}() );
+</script>
+</body>
+</html>

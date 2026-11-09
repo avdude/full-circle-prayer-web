@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Full Circle Prayer · Example</title>
+	<style>
+		body { margin: 0; font-family: system-ui, sans-serif; background: #f6f3ee; }
+		main { max-width: 760px; margin: 0 auto; padding: 24px 16px 64px; }
+	</style>
+</head>
+<body>
+<main>
+	<!-- 1. Your settings. Every line is optional; leave out what you don't need. -->
+	<script>
+	window.FullCirclePrayerConfig = {
+		church: "Hillside Community Church",
+		tagline: "Full Circle Prayer",
+		location: "120 Elm Street · Springfield",
+		city: "Springfield",
+		bible: "WEB",
+		duration: 30,
+		mode: "simple",
+		feedback: { email: "prayer@example.org", name: "the prayer team" },
+		missionaries: [
+			{ name: "The Rivera Family", location: "Lima, Peru", prayer: "Pray for their new church plant and for the children's school year." },
+			{ name: "Grace Okafor", location: "Nairobi, Kenya", prayer: "Pray for health and for the nurses she trains." }
+		],
+		churches: {
+			perDay: 3,
+			list: [
+				{ name: "First Baptist Church", detail: "Main Street", area: "Downtown" },
+				{ name: "St. Mark's Lutheran", detail: "Oak Avenue" },
+				{ name: "New Life Fellowship", area: "East Side" },
+				{ name: "Grace Methodist", detail: "Pine Road" }
+			]
+		},
+		countries: [ "Peru | for the church in the Andes", "Kenya | for church leaders and families" ],
+		footer: "Hillside Community Church · Praying together"
+	};
+	</script>
+
+	<!-- 2. Where Full Circle Prayer goes. -->
+	<div data-full-circle-prayer></div>
+
+	<!-- 3. Full Circle Prayer itself. It stays up to date on its own. -->
+	<script src="../dist/full-circle-prayer.js" defer></script>
+</main>
+</body>
+</html>

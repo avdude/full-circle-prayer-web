@@ -1,0 +1,20 @@
+{
+  "name": "full-circle-prayer-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Full Circle Prayer for any website: a guided time of prayer in twelve movements. Add one script tag.",
+  "license": "GPL-2.0-or-later",
+  "author": "avdude",
+  "homepage": "https://fullcircleprayer.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/avdude/full-circle-prayer-web.git"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "sync": "node tools/build.mjs --sync ../full-circle-prayer",
+    "test": "node tools/build.mjs && node --test tests/*.test.mjs",
+    "serve": "node tools/serve.mjs"
+  }
+}
